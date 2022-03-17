@@ -1,0 +1,12 @@
+"use strict";
+exports.__esModule = true;
+var person_1 = require("./entities/person");
+var enums_1 = require("./enums/enums");
+var nextId = 0;
+var me = new person_1.Person(nextId++, 'Anton', enums_1.Gender.male);
+me.addFather(new person_1.Person(nextId++, 'Vasily', enums_1.Gender.male));
+me.addMother(new person_1.Person(nextId++, 'Maria', enums_1.Gender.female));
+me.addChild(new person_1.Person(nextId++, 'Emily', enums_1.Gender.female));
+me.getMarried(new person_1.Person(nextId++, 'Ana', enums_1.Gender.female));
+me.divorceById(nextId - 1);
+me.show();
