@@ -29,11 +29,8 @@ export class Person implements ParentsApi, ChildrenApi, CoupleApi {
     }
 
     divorceById(id: number): void {
-        // finde index in 
         const exCouple = this.couple.getById(id)
-        // update peson and save
         exCouple.status = MaritalStatus.DIVORCED
-        // updade status
         this.status = MaritalStatus.DIVORCED;
     }
 
